@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to Section A.We will get the information here very easily.On this website we will get all the information in our section.Thanks for staying with me">
+   <meta name="keywords" content="infprmation,scetion a,vu student,vu,20th batch vu,informatiom-section a">
+   <meta name="author" content="inmformation,setion a">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body onload="initClock()">
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#"><span>Section-A.</span></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">Notice</a></li>
+                <li><a href="#services" class="menu-btn">Teacher</a></li>
+                <li><a href="http://202.5.52.152:8081" target="_blank">Result</a></li>
+                <!--<li><a href="#sks" class="menu-btn">Result</a></li>-->
+                <li><a href="#teams" class="menu-btn">Student</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home">
+      <marquee class=".ghosona1" > >> 14 তারিখে নেটওয়ার্ক ল্যাব ফাইনাল হবে </marquee>
+
+        
+        <div class="max-width">
+            
+            <div class="home-content">
+                
+               
+                  
+                    <div class="side2">
+                      
+                      <div>
+                        <div class="datetime">
+                          <div class="date">
+                            <span id="dayname">Day</span>,
+                            <span id="month">Month</span>
+                            <span id="daynum">00</span>,
+                            <span id="year">Year</span>
+                          </div>
+                          <div class="time">
+                            <span id="hour">00</span>:
+                            <span id="minutes">00</span>:
+                            <span id="seconds">00</span>
+                            <span id="period">AM</span>
+                          </div>
+                        </div>
+                        <div class="routine">
+                            <h1 id="class-1"></h1>
+                            <h1 id="class-2"></h1>
+                        </div>
+                        <!--digital clock end-->
+                        
+                        <script type="text/javascript">
+                        let class_one = document.getElementById("class-1");
+                        let class_two = document.getElementById("class-2");
+                        let today = new Date().getDay();
+                        if(today == 0){
+                            class_one.innerHTML = "(9.00-10.25) Basic Statistics and Probability Course (9.00-10.25) ";
+                            class_two.innerHTML = "Computer Networks (10.30-11.55)";
+                        } else if (today  == 1){
+                          class_one.innerHTML = "Computer Networks Lab (12.00-2.00)";
+                            class_two.innerHTML = "Digital Logic  Design (2.00-3.25)";
+                        } else if (today  == 2){
+                            class_two.innerHTML = "Computer Networks (10.30-11.55)";
+                            class_one.innerHTML = " Basic Statistics and Probability Course (9.00-10.25) ";
+                        }
+                        else if (today  == 3){
+                            class_two.innerHTML = "Software Development Lab (2.00-3.00)";
+                            class_one.innerHTML = "Digital Logic  Design  (10.30-11.55)";
+                        }else if (today  == 4){
+                            class_two.innerHTML = "NONE";
+                            class_one.innerHTML = "Digital Logic Design Lab  (11.00-1.00)";
+                        }else if (today  == 5){
+                            class_two.innerHTML = "Chil Mama";
+                            class_one.innerHTML = "Chil Mama";
+                        }else if (today  == 6){
+                            class_two.innerHTML = "Chil Mama";
+                            class_one.innerHTML = "Chil Mama";
+                        }
+                        function updateClock(){
+                          var now = new Date();
+                          var dname = now.getDay(),
+                              mo = now.getMonth(),
+                              dnum = now.getDate(),
+                              yr = now.getFullYear(),
+                              hou = now.getHours(),
+                              min = now.getMinutes(),
+                              sec = now.getSeconds(),
+                              pe = "AM";
+                              
+                              if(hou >= 12){
+                                pe = "PM";
+                              }
+                              if(hou == 0){
+                                hou = 12;
+                              }
+                              if(hou > 12){
+                                hou = hou - 12;
+                              }
+                              
+                              Number.prototype.pad = function(digits){
+                                for(var n = this.toString(); n.length < digits; n = 0 + n);
+                                return n;
+                              }
+                        
+                              var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+                              var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                              var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                              var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+                              for(var i = 0; i < ids.length; i++)
+                              document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                              
+                        }
+                        
+                        function initClock(){
+                          updateClock();
+                          window.setInterval("updateClock()", 1);
+                          
+                        }
+                        
+                        </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <!-- about section start -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">Notice</h2>
+            <div class="about-content">
+                <div class="column left">
+                  
+                  <img src="images/n.jpg" alt="">
+                </div>
+                <div class="column right">
+                    <li>14 তারিখে নেটওয়ার্ক ল্যাব ফাইনাল হবে</li> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- services section start -->
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title">Teacher</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i > </i>
+                        <div class="text">Course Title: Basic Statistics and Probability Course </div>
+                        <p>Code: STA 231<br> Teacher: Ahammed Hossain <br>assistant Professor Department of CSE<br></p>
+<br>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            
+
+                            </ul></p>
+                        
+
+
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i ></i>
+                        <div class="text">  Course Title: Digital Logic  Design  </div>
+                        <p>Course Code: CSE 231  <br>Course Teacher: Mst. Jannatul <br>Ferdous(Lecturer)<br> Department of CSE</p>
+                   
+                        <br>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            
+
+                            </ul></p>
+                   
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="box">
+                        <i ></i>
+                        <div class="text">Course Title: Digital Logic Design Lab </div>
+                        <p>Course Code: CSE 232 <br>Course Teacher: Monika Kabir <br> (Lecturer)<br>Department of CSE</p>
+                        <br>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            
+
+                            </ul></p>
+                   
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="box">
+                        <i ></i>
+                        <div class="text">Course Title: Computer Networks</div>
+                        <p>Course Code: CSE 233 <br> Course Teacher: Abdullah Al Shiam Lecturer(Provisional)<br> Department of CSE</p>
+                   
+                        <br>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            
+
+                            </ul></p>
+                   
+                   
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="box">
+                        <i ></i>
+                        <div class="text">Course Title: Computer Networks Lab </div>
+                        <p>Lab Course Code: CSE 234 <br> Course Teacher: Md. Nahid Hasan <br>Abdullah Al Shiam  <br>Lecturer Department of CSE</p>
+                   
+                        <br>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            
+
+                            </ul></p>
+                   
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="box">
+                        <i></i>
+                        <div class="text">Course Title: Software Development Lab  </div>
+                        <p>Course Code: CSE 236<br> Course Teacher: Arifa Ferdousi<br>Assistant Professor,Department of CSE</p>
+                        <br>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            
+
+                            </ul></p>
+                    
+                    
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- teams section start -->
+    <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">Student</h2>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                
+
+
+
+                <!--stu-->
+
+
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Name:</div>
+                        <p>ID:</p>
+                        <p> <ul class="b">
+                            <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                            <li class="a"><i class="fas fa-phone-volume"></i></li>
+                            <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul></p>
+                    </div>
+                </div>
+
+
+
+
+                <!--stu-->
+                
+               
+                
+
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact </h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">University Links</div>
+                    <div>
+                             <ul>
+                                 <li><a href="https://vu.edu.bd/"> <button> Vu </button></li></a>
+                                 <li> <a href="https://www.facebook.com/groups/312448452239956"> <button>CSE Group</button></li></a>
+                                 <li><a href="https://www.facebook.com/vu.edu"><button>VU FB</button></li></a>
+                             </ul>
+
+                        
+
+
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="text">     </div>
+                    
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="https://www.facebook.com/emon.tasveer1301/">Emon</a> <a href="http://www.facebook.com">Bristy</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
